@@ -53,6 +53,12 @@ require("lazy").setup({
                 })
             end,
         },
+        {
+        "windwp/nvim-ts-autotag",
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end,
+        },
         -- import/override with your plugins
         { import = "plugins" },
         { import = "lazyvim.plugins.extras.linting.eslint" },

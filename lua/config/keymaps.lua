@@ -1,7 +1,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
-
 keymap.set("n", "x", '"_x')
 
 -- Increment/decrement
@@ -49,3 +48,9 @@ keymap.set("n", "sc", ":close<Return>", opts)
 keymap.set("n", "<C-j>", function()
     vim.diagnostic.goto_next()
 end, opts)
+
+-- Importa el módulo de funciones
+local functions = require("config.functions")
+
+-- Asigna el atajo de teclado para Control + i en modo visual
+keymap.set("v", "<C-i>", functions.wrap_in_div, opts)
