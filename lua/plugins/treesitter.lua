@@ -20,6 +20,10 @@ return {
         "lua",
         "java",
       },
+      indent = {
+        enable = true,
+        disable = { "css" }, -- Desactiva indentación automática en CSS
+      },
       query_linter = {
         enable = true,
         use_virtual_text = true,

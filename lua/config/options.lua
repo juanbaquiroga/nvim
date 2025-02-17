@@ -19,9 +19,9 @@ vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
 vim.opt.breakindent = true
-vim.opt.shiftwidth = 2 -- Ajusta la cantidad de espacios para la indentación automática
-vim.opt.tabstop = 2 -- Ajusta el número de espacios que representa un tabulador
-vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 4 -- Ajusta la cantidad de espacios para la indentación automática
+vim.opt.tabstop = 4 -- Ajusta el número de espacios que representa un tabulador
+vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.wrap = false
 vim.opt.backspace = { "start", "eol", "indent" }
@@ -32,3 +32,13 @@ vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 vim.opt.autowrite = true
 vim.opt.formatoptions:append({ "r" })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "css", "scss" },
+    callback = function()
+        vim.opt_local.shiftwidth = 4
+        vim.opt_local.tabstop = 4
+        vim.opt_local.softtabstop = 4
+        vim.opt_local.expandtab = true
+    end,
+})
